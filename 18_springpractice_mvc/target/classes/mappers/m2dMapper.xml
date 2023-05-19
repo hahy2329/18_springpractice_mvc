@@ -112,6 +112,70 @@
 	 
 	 </select>
 	 
+	 <select id="ex09" resultType="hashmap">
+	 	SELECT 
+	 		PRODUCT_CD AS productCd,
+	 		PRICE AS price,
+	 		PRICE * 0.1 AS tax,
+	 		PRICE + PRICE * 0.1 AS totalPrice
+	 	FROM
+	 		PRODUCT
+	 		
+	 		
+	 
+	 </select>
+	 
+	 
+	 
+	 <resultMap type="hashmap" id="productMap">
+	 	<result column="PRODUCT_CD" property="product_cd"></result>
+	 	<result column="PRICE" property="price"></result>
+	 	<result column="TAX" property="tax"></result>
+	 	<result column="TOTAL_PRICE" property="totalPrice"></result>
+	 
+	 </resultMap>
+	 
+	 
+	 <select id="ex10" resultMap="productMap">
+	 	SELECT 
+	 		PRODUCT_CD AS PRODUCT_CD,
+	 		PRICE AS PRICE,
+	 		PRICE * 0.1 AS TAX,
+	 		PRICE + PRICE * 0.1 AS TOTAL_PRICE
+	 	FROM 
+	 		PRODUCT
+	 	
+	 
+	 
+	 </select>
+	 
+	 <resultMap type="hashMap" id="joinMap">
+	 	<result column="PRODUCT_CD" property="productCd"/>
+	 	<result column="PRODUCT_NM" property="prodcutNm"/>
+	 	<result column="BRAND_CD" property="brandCd"/>
+	 	<result column="BRAND_NM" property="brandNm"/>
+	 	<result column="ACTIVE_YN" property="activeYn"/>
+	 	
+	 
+	 </resultMap>
+	 
+	 <select id="ex11" resultMap="joinMap">
+	 	SELECT 
+	 		P.PRODUCT_CD AS PRODUCT_CD,
+	 		P.PRODUCT_NM AS PRODUCT_NM,
+	 		B.BRAND_CD  AS BRAND_CD,
+	 		B.BRAND_NM AS BRAND_NM,
+	 		B.ACTIVE_YN AS ACTIVE_YN
+	 		
+	 		
+	 	FROM
+	 		PRODUCT P 
+	 		
+	 		INNER JOIN BRAND B 
+	 			ON P.BRAND_CD = B.BRAND_CD
+	 
+	 
+	 </select>
 	 
 	 
 	

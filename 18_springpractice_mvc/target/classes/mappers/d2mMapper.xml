@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="d2m">
+
+	<update id="sample01" parameterType="int">
+		UPDATE 
+				PRODUCT
+		SET
+				PRICE = PRICE + 1
+		WHERE
+				PRODUCT_CD = #{productCd}
+	</update>
+	
+	<update id="sample02" parameterType="String">
+		
+		UPDATE 
+			PRODUCT
+		SET
+			DELIVERY_PRICE = DELIVERY_PRICE - 1
+		WHERE
+			BRAND_CD = #{brandCd}
+	
+	</update>
+	
+	<select id="sample03" parameterType="String" resultType="BrandDTO">
+		SELECT 
+				* 
+		FROM
+				BRAND 
+		WHERE 
+				BRAND_NM = #{brandNm}		
+		
+	
+	</select>
+
+</mapper>

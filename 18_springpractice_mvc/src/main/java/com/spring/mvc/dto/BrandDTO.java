@@ -10,6 +10,7 @@ public class BrandDTO {
 	private String brandNm;
 	private Date enteredDt;
 	private String activeYn;
+	
 	public String getBrandCd() {
 		return brandCd;
 	}

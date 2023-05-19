@@ -1,6 +1,7 @@
 package com.spring.mvcprac.chapter02_mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,7 +90,36 @@ public class M2D {
 		for(ProductDTO productDTO : productList) {
 			System.out.println(productDTO);
 		}
+
+	}
+	
+	public void ex09() {
+		System.out.println("\n - ex09 - \n");
+		List<Map<String,Object>> productMapList = sqlSession.selectList("m2d.ex09");
+	
 		
+		for(Map<String,Object>productMap : productMapList ) {
+			System.out.println(productMap);
+		}
+	}
+	
+	public void ex10() {
+		System.out.println("\n - ex10 - \n");
+		List<Map<String,Object>> productMapList = sqlSession.selectList("m2d.ex10");
+		
+		for(Map<String,Object> productMap : productMapList) {
+			System.out.println(productMap);
+		}
+		
+	}
+	
+	public void ex11() {
+		System.out.println("\n - ex11 - \n");
+		List<Map<String,Object>> joinMap = sqlSession.selectList("m2d.ex11");
+		
+		for(Map<String,Object> map : joinMap) {
+			System.out.println(map);
+		}
 	}
 	
 	
