@@ -102,6 +102,41 @@ public class SupposeController {
 		d2m.sample03();
 		return "home";
 	}
+
+	@GetMapping(value="/sample04")
+	public String sample04() {
+		d2m.sample04();
+		return "home";
+	}
 	
+	@GetMapping(value="/sample05")
+	public String sample05() {
+		d2m.sample05();
+		return "home";
+	}
+	
+	@GetMapping(value="/sample06")
+	public String sample06() {
+		d2m.sample06();
+		return "home";
+	}
+	
+	@GetMapping(value="/sample07")
+	public String sample07() {
+		d2m.sample07();
+		return "home";
+	}
+	
+	@GetMapping(value="/sample08")
+	public String sample08() {
+		d2m.sample08();
+		return "home";
+	}
+	
+	@GetMapping(value="/sample09")
+	public String sample09() {
+		d2m.sample09();
+		return "home";
+	}
 	
 }
